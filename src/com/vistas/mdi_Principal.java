@@ -69,6 +69,24 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableFacultad = new javax.swing.JTable();
+        internalCarrera = new javax.swing.JInternalFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtCodigoCarr = new javax.swing.JTextField();
+        txtNomCar = new javax.swing.JTextField();
+        spinnerMater = new javax.swing.JSpinner();
+        jLabel17 = new javax.swing.JLabel();
+        cmbFacu = new javax.swing.JComboBox<>();
+        btnAgregar = new javax.swing.JButton();
+        btnModi = new javax.swing.JButton();
+        btnElim = new javax.swing.JButton();
+        btnLimp = new javax.swing.JButton();
+        javax.swing.JButton btnExitCarr = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableCarrera = new javax.swing.JTable();
         menuBar = new javax.swing.JMenuBar();
         usuMenu = new javax.swing.JMenu();
         newUsuMenuItem = new javax.swing.JMenuItem();
@@ -260,7 +278,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalEstudiante);
-        internalEstudiante.setBounds(10, 10, 590, 500);
+        internalEstudiante.setBounds(120, 10, 590, 500);
 
         internalFacultad.setVisible(false);
 
@@ -395,7 +413,153 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalFacultad);
-        internalFacultad.setBounds(10, 10, 650, 480);
+        internalFacultad.setBounds(180, 20, 500, 480);
+
+        internalCarrera.setVisible(false);
+
+        jLabel13.setText("REGISTRO DE CARRERA");
+
+        jLabel14.setText("Codigo");
+
+        jLabel15.setText("Nombre:");
+
+        jLabel16.setText("Cantidad de Materias:");
+
+        spinnerMater.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
+        jLabel17.setText("Nombre Facultad:");
+
+        cmbFacu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAgregar.setText("Agregar");
+
+        btnModi.setText("Modificar");
+
+        btnElim.setText("Eliminar");
+
+        btnLimp.setText("Limpiar");
+
+        btnExitCarr.setText("Salir");
+        btnExitCarr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitCarrActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNomCar))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCodigoCarr, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spinnerMater))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbFacu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btnAgregar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnModi))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btnElim)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnLimp))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(btnExitCarr)))
+                .addContainerGap(29, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(145, 145, 145))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel13)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(txtCodigoCarr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(txtNomCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(spinnerMater, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAgregar)
+                            .addComponent(btnModi))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnElim)
+                            .addComponent(btnLimp))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(cmbFacu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExitCarr))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        tableCarrera.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableCarrera.setMaximumSize(new java.awt.Dimension(214, 64));
+        tableCarrera.setName(""); // NOI18N
+        jScrollPane3.setViewportView(tableCarrera);
+        tableCarrera.getAccessibleContext().setAccessibleDescription("");
+
+        javax.swing.GroupLayout internalCarreraLayout = new javax.swing.GroupLayout(internalCarrera.getContentPane());
+        internalCarrera.getContentPane().setLayout(internalCarreraLayout);
+        internalCarreraLayout.setHorizontalGroup(
+            internalCarreraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+        internalCarreraLayout.setVerticalGroup(
+            internalCarreraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalCarreraLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5))
+        );
+
+        desktopPane.add(internalCarrera);
+        internalCarrera.setBounds(160, 30, 440, 420);
 
         usuMenu.setMnemonic('f');
         usuMenu.setText("Usuarios");
@@ -423,6 +587,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         carreMenu.setText("Carrera");
 
         newCarrMenuItem.setText("Agregar Carrera");
+        newCarrMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newCarrMenuItemActionPerformed(evt);
+            }
+        });
         carreMenu.add(newCarrMenuItem);
 
         menuBar.add(carreMenu);
@@ -476,6 +645,8 @@ public class mdi_Principal extends javax.swing.JFrame {
 //mostrar formulario estudiante
     private void newEstMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEstMenuItemActionPerformed
         internalEstudiante.setVisible(true);
+        internalCarrera.setVisible(false);
+        internalFacultad.setVisible(false); 
     }//GEN-LAST:event_newEstMenuItemActionPerformed
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
@@ -487,12 +658,24 @@ public class mdi_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void newFacuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFacuMenuItemActionPerformed
-        internalFacultad.setVisible(true);    
+        internalFacultad.setVisible(true);   
+        internalEstudiante.setVisible(false);
+        internalCarrera.setVisible(false);
     }//GEN-LAST:event_newFacuMenuItemActionPerformed
 //boton salir
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+//mostrar formulariocarreras
+    private void newCarrMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCarrMenuItemActionPerformed
+        internalCarrera.setVisible(true);
+        internalFacultad.setVisible(false);   
+        internalEstudiante.setVisible(false);
+    }//GEN-LAST:event_newCarrMenuItemActionPerformed
+
+    private void btnExitCarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitCarrActionPerformed
+        internalCarrera.setVisible(false);
+    }//GEN-LAST:event_btnExitCarrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -531,10 +714,14 @@ public class mdi_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgreFac;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliFacu;
+    private javax.swing.JButton btnElim;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLimFac;
+    private javax.swing.JButton btnLimp;
     private javax.swing.JButton btnModFacu;
+    private javax.swing.JButton btnModi;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnagregar;
     private javax.swing.JButton btneliminar;
@@ -542,17 +729,24 @@ public class mdi_Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnmodific;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenu carreMenu;
+    private javax.swing.JComboBox<String> cmbFacu;
     private javax.swing.JComboBox<String> cmbcarrera;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu estuMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu facuMenu;
+    private javax.swing.JInternalFrame internalCarrera;
     private javax.swing.JInternalFrame internalEstudiante;
     private javax.swing.JInternalFrame internalFacultad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -563,8 +757,10 @@ public class mdi_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem newCarrMenuItem;
     private javax.swing.JMenuItem newEstMenuItem;
@@ -575,8 +771,12 @@ public class mdi_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu repoMenu;
     private javax.swing.JMenu salirMenu;
     private javax.swing.JSpinner spinerEdad;
+    private javax.swing.JSpinner spinnerMater;
     private javax.swing.JTable tablaEstudiante;
+    private javax.swing.JTable tableCarrera;
     private javax.swing.JTable tableFacultad;
+    private javax.swing.JTextField txtCodigoCarr;
+    private javax.swing.JTextField txtNomCar;
     private javax.swing.JTextField txtcodigfacu;
     private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtcum;
