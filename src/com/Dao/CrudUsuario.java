@@ -5,9 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author BymerGomez
+ * Nombre de la Interfaz: CrudUsuario
+ * Versión: 1.0
+ * Fecha: 17 Ago. 2019
+ * Copyright: ITCA-FEPADE
+ * @author Elvis Adalberto Alfaro Gómez
  */
+
+/*Métodos Abstractos*/
 public interface CrudUsuario
 {
     public ArrayList<Usuario> mostrar()throws ClassNotFoundException,

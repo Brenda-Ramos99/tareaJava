@@ -1,36 +1,35 @@
 package com.LogicaNegocio;
 
-import com.Dao.DaoFacultad;
-import com.Entidades.Facultad;
+import com.Dao.DaoTipoUsuario;
+import com.Entidades.TipoUsuario;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Nombre de la Clase: TsFacultad
+ * Nombre de la Clase: TsTipoUsuario
  * Versión: 1.0
  * Fecha: 17 Ago. 2019
  * Copyright: ITCA-FEPADE
  * @author Elvis Adalberto Alfaro Gómez
  */
-public class TsFacultad
+public class TsTipoUsuario
 {
-    Facultad f;
-    DaoFacultad obF = new DaoFacultad();
+    TipoUsuario tU;
+    DaoTipoUsuario obTU = new DaoTipoUsuario();
     public DefaultTableModel datos()
     {        
-        String[] title={"Código","Nombre","Teléfono"};
+        String[] title={"Código","Nombre"};
         DefaultTableModel tm=new DefaultTableModel(title,0);
-        ArrayList<Facultad> ar= new ArrayList<Facultad>();
-        Object[] re = new Object[3];
+        ArrayList<TipoUsuario> ar= new ArrayList<TipoUsuario>();
+        Object[] re = new Object[2];
         try
         {
-            ar.addAll(obF.mostrar());
-            for (Facultad v:ar)
+            ar.addAll(obTU.mostrar());
+            for (TipoUsuario v:ar)
             {
-                re[0]=v.getCodigoFacultad();
+                re[0]=v.getCodigoTipo();
                 re[1]=v.getNombre();
-                re[2]=v.getTelefono();
                 tm.addRow(re);
             }
         }
@@ -41,11 +40,11 @@ public class TsFacultad
         return tm;
     }
     
-    public void agregar(String nombre,String telefono)
+    public void agregar(String nombre)
     {
-        f = new Facultad(nombre,String.valueOf(telefono));
+        tU = new TipoUsuario(nombre);
         try {
-            if (obF.agregar(f)>0) {
+            if (obTU.agregar(tU)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "
                         + "correctamente");
             }
@@ -56,12 +55,11 @@ public class TsFacultad
         } catch (Exception e) {
         }
     }
-    public void modificar(String codigoFacultad, String nombre,String telefono)
+    public void modificar(String codigoTipo, String nombre)
     {
-        f = new Facultad(Integer.valueOf(codigoFacultad),nombre,
-                String.valueOf(telefono));
+        tU = new TipoUsuario(Integer.valueOf(codigoTipo),nombre);
         try {
-            if (obF.modificar(f)>0) {
+            if (obTU.modificar(tU)>0) {
                 JOptionPane.showMessageDialog(null, "Registro modificado "
                         + "correctamente");
             }
@@ -73,11 +71,11 @@ public class TsFacultad
         }
     }
     
-    public void eliminar(String codigoFacultad)
+    public void eliminar(String codigoTipo)
     {
-        f = new Facultad(Integer.valueOf(codigoFacultad));
+        tU = new TipoUsuario(Integer.valueOf(codigoTipo));
         try {
-            if (obF.eliminar(f)>0) {
+            if (obTU.eliminar(tU)>0) {
                 JOptionPane.showMessageDialog(null, "Registro eliminado "
                         + "correctamente");
             }
@@ -85,7 +83,9 @@ public class TsFacultad
             {
                 JOptionPane.showMessageDialog(null, "Registro no eliminado");
             }
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
+            
         }
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.Dao;
 
 import com.Entidades.Estudiante;
@@ -10,9 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author BymerGomez
+ * Nombre de la Interfaz: CrudEstudiante
+ * Versión: 1.0
+ * Fecha: 17 Ago. 2019
+ * Copyright: ITCA-FEPADE
+ * @author Elvis Adalberto Alfaro Gómez
  */
+
+/*Métodos abstractos*/
 public interface CrudEstudiante
 {
     public ArrayList<Estudiante> mostrar()throws ClassNotFoundException,

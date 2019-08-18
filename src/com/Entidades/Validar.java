@@ -4,8 +4,11 @@ import java.awt.event.KeyEvent;
 import javax.swing.JTextField;
 
 /**
- *
- * @author Brenda Ramos
+ * Nombre de la Clase: Validar
+ * Versión: 1.0
+ * Fecha: 17 Ago. 2019
+ * Copyright: ITCA-FEPADE
+ * @author Brenda Lizeth Ramos
  */
 public class Validar 
 {

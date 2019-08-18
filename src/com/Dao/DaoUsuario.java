@@ -8,9 +8,13 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author BymerGomez
+ * Nombre de la Clase: DaoUsuario
+ * Versión: 1.0
+ * Fecha: 17 Ago. 2019
+ * Copyright: ITCA-FEPADE
+ * @author Elvis Adalberto Alfaro Gómez
  */
+
 public class DaoUsuario extends Conexion implements CrudUsuario
 {
     PreparedStatement ps;

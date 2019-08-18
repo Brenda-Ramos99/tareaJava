@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author BymerGomez
+ * Nombre de la Clase: DaoTipoUsuario
+ * Versión: 1.0
+ * Fecha: 17 Ago. 2019
+ * Copyright: ITCA-FEPADE
+ * @author Elvis Adalberto Alfaro Gómez
  */
 public class DaoTipoUsuario extends Conexion implements CrudTipoUsuario
 {

@@ -1,36 +1,38 @@
 package com.LogicaNegocio;
 
-import com.Dao.DaoFacultad;
-import com.Entidades.Facultad;
+import com.Dao.DaoCarrera;
+import com.Entidades.Carrera;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Nombre de la Clase: TsFacultad
+ * Nombre de la Clase: TsCarrera
  * Versión: 1.0
  * Fecha: 17 Ago. 2019
  * Copyright: ITCA-FEPADE
  * @author Elvis Adalberto Alfaro Gómez
  */
-public class TsFacultad
+public class TsCarrera
 {
-    Facultad f;
-    DaoFacultad obF = new DaoFacultad();
+    Carrera c;
+    DaoCarrera obC = new DaoCarrera();
     public DefaultTableModel datos()
     {        
-        String[] title={"Código","Nombre","Teléfono"};
+        String[] title={"Código","Carrera","Cant Materias", "Facultad"};
         DefaultTableModel tm=new DefaultTableModel(title,0);
-        ArrayList<Facultad> ar= new ArrayList<Facultad>();
-        Object[] re = new Object[3];
+        ArrayList<Carrera> ar= new ArrayList<Carrera>();
+        Object[] re = new Object[4];
         try
         {
-            ar.addAll(obF.mostrar());
-            for (Facultad v:ar)
+            ar.addAll(obC.mostrar());
+            for (Carrera v:ar)
             {
-                re[0]=v.getCodigoFacultad();
+                re[0]=v.getCodigoCarrera();
                 re[1]=v.getNombre();
-                re[2]=v.getTelefono();
+                re[2]=v.getCantidadMaterias();
+                re[3]=v.getCodigoFacultad();/*En el método getCodigoFacultad
+                                hay que buscar el nombre en base al código*/
                 tm.addRow(re);
             }
         }
@@ -41,11 +43,13 @@ public class TsFacultad
         return tm;
     }
     
-    public void agregar(String nombre,String telefono)
+    public void agregar(String nombre,String cantidadMaterias
+            , String codigoFacultad)
     {
-        f = new Facultad(nombre,String.valueOf(telefono));
+        c = new Carrera(nombre,Integer.valueOf(cantidadMaterias),
+                Integer.valueOf(codigoFacultad));
         try {
-            if (obF.agregar(f)>0) {
+            if (obC.agregar(c)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "
                         + "correctamente");
             }
@@ -56,12 +60,14 @@ public class TsFacultad
         } catch (Exception e) {
         }
     }
-    public void modificar(String codigoFacultad, String nombre,String telefono)
+    public void modificar(String codigoCarrera, String nombre,
+            String cantidadMaterias, String codigoFacultad)
     {
-        f = new Facultad(Integer.valueOf(codigoFacultad),nombre,
-                String.valueOf(telefono));
+        c = new Carrera(Integer.valueOf(codigoCarrera),nombre,
+                Integer.valueOf(cantidadMaterias),
+                Integer.valueOf(codigoFacultad));
         try {
-            if (obF.modificar(f)>0) {
+            if (obC.modificar(c)>0) {
                 JOptionPane.showMessageDialog(null, "Registro modificado "
                         + "correctamente");
             }
@@ -73,11 +79,11 @@ public class TsFacultad
         }
     }
     
-    public void eliminar(String codigoFacultad)
+    public void eliminar(String codigoCarrera)
     {
-        f = new Facultad(Integer.valueOf(codigoFacultad));
+        c = new Carrera(Integer.valueOf(codigoCarrera));
         try {
-            if (obF.eliminar(f)>0) {
+            if (obC.eliminar(c)>0) {
                 JOptionPane.showMessageDialog(null, "Registro eliminado "
                         + "correctamente");
             }
