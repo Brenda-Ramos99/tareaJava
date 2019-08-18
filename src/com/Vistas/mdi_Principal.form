@@ -17,6 +17,9 @@
                 <Property name="mnemonic" type="int" value="111"/>
                 <Property name="text" type="java.lang.String" value="Agregar Usuario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newUsuMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -890,9 +893,9 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JInternalFrame" name="jInternalFrame1">
+        <Container class="javax.swing.JInternalFrame" name="internalUser">
           <Properties>
-            <Property name="visible" type="boolean" value="true"/>
+            <Property name="visible" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1160,6 +1163,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirUserActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

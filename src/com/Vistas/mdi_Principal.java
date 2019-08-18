@@ -87,7 +87,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnLimp = new javax.swing.JButton();
         btnExitCarr = new javax.swing.JButton();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        internalUser = new javax.swing.JInternalFrame();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableUser = new javax.swing.JTable();
@@ -583,7 +583,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         desktopPane.add(internalCarrera);
         internalCarrera.setBounds(130, 20, 460, 410);
 
-        jInternalFrame1.setVisible(true);
+        internalUser.setVisible(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -636,100 +636,105 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnLimUser.setText("Limpiar");
 
         btnSalirUser.setText("Salir");
+        btnSalirUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirUserActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+        javax.swing.GroupLayout internalUserLayout = new javax.swing.GroupLayout(internalUser.getContentPane());
+        internalUser.getContentPane().setLayout(internalUserLayout);
+        internalUserLayout.setHorizontalGroup(
+            internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalUserLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(internalUserLayout.createSequentialGroup()
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(internalUserLayout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtCodUser))
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                            .addGroup(internalUserLayout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtnomUser, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(internalUserLayout.createSequentialGroup()
+                                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel25)
                                     .addComponent(jLabel21))
                                 .addGap(15, 15, 15)
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(spinnerEdadUser, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                                     .addComponent(txtUser))))
                         .addGap(30, 30, 30)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel26)
                             .addComponent(jLabel23)
                             .addComponent(jLabel24))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtApellido)
                             .addComponent(cmbTipoUSer, 0, 119, Short.MAX_VALUE)
                             .addComponent(passwordUser))
                         .addGap(73, 73, 73))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                    .addGroup(internalUserLayout.createSequentialGroup()
                         .addComponent(btAgreuser)
                         .addGap(18, 18, 18)
                         .addComponent(btnModUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                            .addGroup(internalUserLayout.createSequentialGroup()
                                 .addComponent(btnElimUser)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnLimUser)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnSalirUser)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+            .addGroup(internalUserLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        internalUserLayout.setVerticalGroup(
+            internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalUserLayout.createSequentialGroup()
+                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                    .addGroup(internalUserLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel18)
                         .addGap(12, 12, 12)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
                             .addComponent(txtCodUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
                             .addComponent(jLabel23)
                             .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtnomUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(14, 14, 14)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(internalUserLayout.createSequentialGroup()
+                                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel21)
                                         .addComponent(spinnerEdadUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel24)
                                         .addComponent(cmbTipoUSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel25)
                                         .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel26)))
                             .addComponent(passwordUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btAgreuser)
                             .addComponent(btnModUser)
                             .addComponent(btnElimUser)
@@ -740,14 +745,19 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        desktopPane.add(jInternalFrame1);
-        jInternalFrame1.setBounds(140, 30, 470, 450);
+        desktopPane.add(internalUser);
+        internalUser.setBounds(140, 30, 470, 450);
 
         usuMenu.setMnemonic('f');
         usuMenu.setText("Usuarios");
 
         newUsuMenuItem.setMnemonic('o');
         newUsuMenuItem.setText("Agregar Usuario");
+        newUsuMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUsuMenuItemActionPerformed(evt);
+            }
+        });
         usuMenu.add(newUsuMenuItem);
 
         menuBar.add(usuMenu);
@@ -827,31 +837,73 @@ public class mdi_Principal extends javax.swing.JFrame {
 //mostrar formulario estudiante
     private void newEstMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEstMenuItemActionPerformed
         internalEstudiante.setVisible(true);
+        facuMenu.setEnabled(false);
+        carreMenu.setEnabled(false);
+        usuMenu.setEnabled(false);
+        repoMenu.setEnabled(false);
     }//GEN-LAST:event_newEstMenuItemActionPerformed
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
         internalEstudiante.setVisible(false);
+        usuMenu.setEnabled(true);
+        facuMenu.setEnabled(true);
+        carreMenu.setEnabled(true);
+        repoMenu.setEnabled(true);
     }//GEN-LAST:event_btnExitMouseClicked
 //mostara formulario facultad
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         internalFacultad.setVisible(false);
+        usuMenu.setEnabled(true);
+        carreMenu.setEnabled(true);
+        repoMenu.setEnabled(true);
+        estuMenu.setEnabled(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void newFacuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFacuMenuItemActionPerformed
-        internalFacultad.setVisible(true);    
+        internalFacultad.setVisible(true); 
+        carreMenu.setEnabled(false);
+        usuMenu.setEnabled(false);
+        repoMenu.setEnabled(false);
+        estuMenu.setEnabled(false);
     }//GEN-LAST:event_newFacuMenuItemActionPerformed
 //boton salir
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-
+//mostrar formulario de carreras 
     private void newCarrMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCarrMenuItemActionPerformed
         internalCarrera.setVisible(true);
+        facuMenu.setEnabled(false);
+        usuMenu.setEnabled(false);
+        repoMenu.setEnabled(false);
+        estuMenu.setEnabled(false);
+        
     }//GEN-LAST:event_newCarrMenuItemActionPerformed
 
     private void btnExitCarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitCarrActionPerformed
         internalCarrera.setVisible(false);
+        usuMenu.setEnabled(true);
+        facuMenu.setEnabled(true);
+        repoMenu.setEnabled(true);
+        estuMenu.setEnabled(true);
     }//GEN-LAST:event_btnExitCarrActionPerformed
+//mostrar formulario agregar ususario
+    private void btnSalirUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirUserActionPerformed
+        internalUser.setVisible(false);
+        usuMenu.setEnabled(true);
+        facuMenu.setEnabled(true);
+        carreMenu.setEnabled(true);
+        repoMenu.setEnabled(true);
+        estuMenu.setEnabled(true);
+    }//GEN-LAST:event_btnSalirUserActionPerformed
+
+    private void newUsuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuMenuItemActionPerformed
+        internalUser.setVisible(true);
+        facuMenu.setEnabled(false);
+        carreMenu.setEnabled(false);
+        repoMenu.setEnabled(false);
+        estuMenu.setEnabled(false);
+    }//GEN-LAST:event_newUsuMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -921,7 +973,7 @@ public class mdi_Principal extends javax.swing.JFrame {
     private javax.swing.JInternalFrame internalCarrera;
     private javax.swing.JInternalFrame internalEstudiante;
     private javax.swing.JInternalFrame internalFacultad;
-    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JInternalFrame internalUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
