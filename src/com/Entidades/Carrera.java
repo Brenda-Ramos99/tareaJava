@@ -1,4 +1,4 @@
-package sistem.Entidades;
+package com.Entidades;
 
 /**
  * Nombre de la Clase: Carrera

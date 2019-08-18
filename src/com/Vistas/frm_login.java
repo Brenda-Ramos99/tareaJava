@@ -1,4 +1,4 @@
-package sistem.Presentacion;
+package com.Vistas;
 import javax.swing.JOptionPane;
 
 /**

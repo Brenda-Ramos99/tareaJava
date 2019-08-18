@@ -1,4 +1,4 @@
-package sistem.Presentacion;
+package com.Vistas;
 
 /**
  * nombre de la clase: mdi_Principal 
