@@ -71,7 +71,7 @@ public class DaoCarrera extends Conexion implements CrudCarrera
         }
         finally
         {
-            ps.close();
+            //ps.close();
             super.con().close();
         }
         return res;
