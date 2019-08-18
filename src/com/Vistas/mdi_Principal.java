@@ -1,4 +1,5 @@
 package com.Vistas;
+import com.Entidades.Validar;
 
 /**
  * nombre de la clase: mdi_Principal 
@@ -12,11 +13,48 @@ public class mdi_Principal extends javax.swing.JFrame {
     /**
      * Creates new form mdi_Principal
      */
+    Validar v= new Validar();
     public mdi_Principal() {
         initComponents();
         this.setExtendedState(mdi_Principal.MAXIMIZED_BOTH);
+        ///validacion de cajas de texto de solo letras
+        v.validarLetras(txtApellido);
+        v.validarLetras(txtNomCarre);
+        v.validarLetras(txtinteres);
+        v.validarLetras(txtnombrefacu);
+        v.validarLetras(txtnombre);
+        v.validarLetras(txtnomUser);
+        //validaciode  cajas de texto de solo nuemros 
+        v.validarumeros(txtcum);
+        v.validarumeros(txtCodUser);
+        v.validarumeros(txtCodigo);
+        v.validarumeros(txtcodigfacu);
+        v.validarumeros(txttelefacu);
+        v.validarumeros(txtcodigo);
     }
-
+    void limpiar()
+    {
+        txtApellido.setText("");
+        txtCodUser.setText("");
+        txtCodigo.setText("");
+        txtNomCarre.setText("");
+        txtUser.setText("");
+        txtcodigfacu.setText("");
+        txtcodigo.setText("");
+        txtcum.setText("");
+        txtinteres.setText("");
+        txtnombre.setText("");
+        txtnomUser.setText("");
+        txtnombrefacu.setText("");
+        txttelefacu.setText("");
+        cmbFacultad.setSelectedIndex(0);
+        cmbTipoUSer.setSelectedIndex(0);
+        cmbcarrera.setSelectedIndex(0);
+        passwordUser.setText("");
+        //spinerEdad.setModel(null);
+        //spinnerEdadUser.setModel(null);
+        //spinnerMaterias.setModel(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -146,8 +184,6 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel8.setText("Intereses:");
 
-        cmbcarrera.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         rbmasculino.setText("Masculino");
 
         spinerEdad.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
@@ -274,13 +310,10 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         tablaEstudiante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tablaEstudiante);
@@ -302,7 +335,7 @@ public class mdi_Principal extends javax.swing.JFrame {
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -326,6 +359,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnEliFacu.setText("Eliminar");
 
         btnLimFac.setText("Limpiar");
+        btnLimFac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimFacActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -409,13 +447,10 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         tableFacultad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane2.setViewportView(tableFacultad);
@@ -448,13 +483,10 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         tableCarrera.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane3.setViewportView(tableCarrera);
@@ -469,7 +501,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Nombre Facultad");
 
-        cmbFacultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        spinnerMaterias.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
         btnElim.setText("Eliminar");
 
@@ -478,6 +510,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnAgregar.setText("Agregar");
 
         btnLimp.setText("Limpiar");
+        btnLimp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpActionPerformed(evt);
+            }
+        });
 
         btnExitCarr.setText("Salir");
         btnExitCarr.addActionListener(new java.awt.event.ActionListener() {
@@ -582,7 +619,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalCarrera);
@@ -603,13 +640,10 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         tableUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane4.setViewportView(tableUser);
@@ -624,13 +658,13 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel23.setText("Apellido");
 
-        jLabel24.setText("TIpo de Usuario");
+        jLabel24.setText("Tipo de Usuario");
 
         jLabel25.setText("Usuario");
 
         jLabel26.setText("Cotraseña");
 
-        cmbTipoUSer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        spinnerEdadUser.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
 
         btAgreuser.setText("Agregar");
 
@@ -639,6 +673,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnElimUser.setText("Eliminar");
 
         btnLimUser.setText("Limpiar");
+        btnLimUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimUserActionPerformed(evt);
+            }
+        });
 
         btnSalirUser.setText("Salir");
         btnSalirUser.addActionListener(new java.awt.event.ActionListener() {
@@ -700,8 +739,8 @@ public class mdi_Principal extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(internalUserLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                .addContainerGap())
         );
         internalUserLayout.setVerticalGroup(
             internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -747,7 +786,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                             .addComponent(btnSalirUser))))
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalUser);
@@ -847,7 +886,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         usuMenu.setEnabled(false);
         repoMenu.setEnabled(false);
     }//GEN-LAST:event_newEstMenuItemActionPerformed
-
+//salir del formulario estidamte
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
         internalEstudiante.setVisible(false);
         usuMenu.setEnabled(true);
@@ -855,7 +894,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         carreMenu.setEnabled(true);
         repoMenu.setEnabled(true);
     }//GEN-LAST:event_btnExitMouseClicked
-//mostara formulario facultad
+//salir de formulario facultad
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         internalFacultad.setVisible(false);
         usuMenu.setEnabled(true);
@@ -863,7 +902,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(true);
         estuMenu.setEnabled(true);
     }//GEN-LAST:event_btnSalirActionPerformed
-
+//mostrar formulario de facultad
     private void newFacuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFacuMenuItemActionPerformed
         internalFacultad.setVisible(true); 
         carreMenu.setEnabled(false);
@@ -871,7 +910,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(false);
         estuMenu.setEnabled(false);
     }//GEN-LAST:event_newFacuMenuItemActionPerformed
-//boton salir
+//boton salir del todo el mdi
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
@@ -884,7 +923,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         estuMenu.setEnabled(false);
         
     }//GEN-LAST:event_newCarrMenuItemActionPerformed
-
+//salir del formulario carrera
     private void btnExitCarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitCarrActionPerformed
         internalCarrera.setVisible(false);
         usuMenu.setEnabled(true);
@@ -892,7 +931,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(true);
         estuMenu.setEnabled(true);
     }//GEN-LAST:event_btnExitCarrActionPerformed
-//mostrar formulario agregar ususario
+//salir del formulario usuario
     private void btnSalirUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirUserActionPerformed
         internalUser.setVisible(false);
         usuMenu.setEnabled(true);
@@ -901,7 +940,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(true);
         estuMenu.setEnabled(true);
     }//GEN-LAST:event_btnSalirUserActionPerformed
-
+//mostrar formulario agregar ususario
     private void newUsuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuMenuItemActionPerformed
         internalUser.setVisible(true);
         facuMenu.setEnabled(false);
@@ -909,10 +948,22 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(false);
         estuMenu.setEnabled(false);
     }//GEN-LAST:event_newUsuMenuItemActionPerformed
-
+//metodo limpiar de formulario Estudiate
     private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
-        //txt
+        limpiar();
     }//GEN-LAST:event_btnlimpiarActionPerformed
+//limpiar de facultades
+    private void btnLimFacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimFacActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnLimFacActionPerformed
+///limpiar del formulario carrera
+    private void btnLimpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnLimpActionPerformed
+///limpiar del formulario user
+    private void btnLimUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimUserActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnLimUserActionPerformed
 
     /**
      * @param args the command line arguments
