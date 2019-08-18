@@ -18,10 +18,11 @@ public class DaoFacultad extends Conexion implements CrudFacultad
     PreparedStatement ps;
     ResultSet rs;/*Cursor de valores en la tabla "ITERADOR - next()"*/
     Facultad f;/*Instancia a la clase facultad*/
-    int res;
+    int res;/*Número de filas afectadas en cada método(transacción)*/
 
     @Override
-    public ArrayList<Facultad> mostrar() throws ClassNotFoundException, SQLException {
+    public ArrayList<Facultad> mostrar() throws ClassNotFoundException,
+            SQLException {
         ps=super.con().prepareStatement("select * from facultad");
         ArrayList<Facultad> ar = new ArrayList<Facultad>();
         try
@@ -69,13 +70,49 @@ public class DaoFacultad extends Conexion implements CrudFacultad
     }
 
     @Override
-    public int modificar(Facultad f) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int modificar(Facultad f) throws ClassNotFoundException,
+            SQLException {
+        ps=super.con().prepareStatement("update facultad set nombre=?, "
+                + "telefono=? where codigoFacultad=?;");
+        ps.setString(1, f.getNombre());
+        ps.setString(2, f.getTelefono());
+        ps.setInt(3, f.getCodigoFacultad());
+        try
+        {
+            res=ps.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            ps.close();
+            super.con().close();
+        }
+        return res;
     }
 
     @Override
-    public int eliminar(Facultad f) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int eliminar(Facultad f) throws ClassNotFoundException,
+            SQLException {
+        ps=super.con().prepareStatement("delete from facultad where "
+                + "codigoFacultad=?;");
+        ps.setInt(1, f.getCodigoFacultad());
+        try
+        {
+            res=ps.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            ps.close();
+            super.con().close();
+        }
+        return res;
     }
     
     
