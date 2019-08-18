@@ -159,6 +159,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         btneliminar.setText("Eliminar");
 
         btnlimpiar.setText("Limpiar");
+        btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiarActionPerformed(evt);
+            }
+        });
 
         rbfemenino.setText("Femenino");
 
@@ -904,6 +909,10 @@ public class mdi_Principal extends javax.swing.JFrame {
         repoMenu.setEnabled(false);
         estuMenu.setEnabled(false);
     }//GEN-LAST:event_newUsuMenuItemActionPerformed
+
+    private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
+        //txt
+    }//GEN-LAST:event_btnlimpiarActionPerformed
 
     /**
      * @param args the command line arguments
