@@ -114,6 +114,4 @@ public class DaoFacultad extends Conexion implements CrudFacultad
         }
         return res;
     }
-    
-    
 }

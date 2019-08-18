@@ -56,11 +56,11 @@ public class DaoCarrera extends Conexion implements CrudCarrera
 
     @Override
     public int agregar(Carrera c) throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("insert into producto(nombre,precio) "
-                + "values(?,?)");
+        ps=super.con().prepareStatement("insert into carrera (nombre, "
+                + "cantidadMaterias, codigoFacultad) values (?,?,?);");
         ps.setString(1, c.getNombre());
         ps.setInt(2, c.getCantidadMaterias());
-        //ps.setInt(3, res);
+        ps.setInt(3, c.getCodigoFacultad());
         try
         {
             res=ps.executeUpdate();
@@ -71,7 +71,7 @@ public class DaoCarrera extends Conexion implements CrudCarrera
         }
         finally
         {
-            //ps.close();
+            ps.close();
             super.con().close();
         }
         return res;
@@ -79,12 +79,47 @@ public class DaoCarrera extends Conexion implements CrudCarrera
 
     @Override
     public int modificar(Carrera c) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ps=super.con().prepareStatement("update carrera set nombre=?, "
+                + "cantidadMaterias=?, codigoFacultad=? where codigoCarrera=?;");
+        ps.setString(1, c.getNombre());
+        ps.setInt(2, c.getCantidadMaterias());
+        ps.setInt(3, c.getCodigoFacultad());
+        ps.setInt(4, c.getCodigoFacultad());
+        try
+        {
+            res=ps.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            ps.close();
+            super.con().close();
+        }
+        return res;
     }
 
     @Override
     public int eliminar(Carrera c) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ps=super.con().prepareStatement("delete from carrera where "
+                + "codigoCarrera=?;");
+        ps.setInt(1, c.getCodigoCarrera());
+        try
+        {
+            res=ps.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            ps.close();
+            super.con().close();
+        }
+        return res;
     }
     
 }
