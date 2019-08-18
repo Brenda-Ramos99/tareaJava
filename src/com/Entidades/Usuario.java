@@ -11,6 +11,7 @@ public class Usuario
 {
     private int codigoUsuario;
     private String usuario;
+    private String contra;
     private String nombre;
     private String apellido;
     private int edad;
@@ -21,18 +22,19 @@ public class Usuario
         
     }
 
-    public Usuario(int codigoUsuario, String usuario, String nombre,
-            String apellido, int edad, int codigoTipo) {
+    public Usuario(int codigoUsuario, String usuario, String contra, String nombre, String apellido, int edad, int codigoTipo) {
         this.codigoUsuario = codigoUsuario;
         this.usuario = usuario;
+        this.contra = contra;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.codigoTipo = codigoTipo;
     }
 
-    public Usuario(String usuario, String nombre, String apellido, int edad, int codigoTipo) {
+    public Usuario(String usuario, String contra, String nombre, String apellido, int edad, int codigoTipo) {
         this.usuario = usuario;
+        this.contra = contra;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -57,6 +59,14 @@ public class Usuario
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
     }
 
     public String getNombre() {
@@ -90,6 +100,4 @@ public class Usuario
     public void setCodigoTipo(int codigoTipo) {
         this.codigoTipo = codigoTipo;
     }
-    
-    
 }
