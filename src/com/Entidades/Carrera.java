@@ -12,22 +12,21 @@ public class Carrera
     private int codigoCarrera;
     private String nombre;
     private int cantidadMaterias;
-    private int codigoFacultad;
+    private String codigoFacultad;
 
     public Carrera() 
     {
         
     }
 
-    public Carrera(int codigoCarrera, String nombre, int cantidadMaterias,
-            int codigoFacultad) {
+    public Carrera(int codigoCarrera, String nombre, int cantidadMaterias, String codigoFacultad) {
         this.codigoCarrera = codigoCarrera;
         this.nombre = nombre;
         this.cantidadMaterias = cantidadMaterias;
         this.codigoFacultad = codigoFacultad;
     }
 
-    public Carrera(String nombre, int cantidadMaterias, int codigoFacultad) {
+    public Carrera(String nombre, int cantidadMaterias, String codigoFacultad) {
         this.nombre = nombre;
         this.cantidadMaterias = cantidadMaterias;
         this.codigoFacultad = codigoFacultad;
@@ -61,11 +60,13 @@ public class Carrera
         this.cantidadMaterias = cantidadMaterias;
     }
 
-    public int getCodigoFacultad() {
+    public String getCodigoFacultad() {
         return codigoFacultad;
     }
 
-    public void setCodigoFacultad(int codigoFacultad) {
+    public void setCodigoFacultad(String codigoFacultad) {
         this.codigoFacultad = codigoFacultad;
-    }    
+    }
+    
+    
 }

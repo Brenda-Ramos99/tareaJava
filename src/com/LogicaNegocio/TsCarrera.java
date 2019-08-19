@@ -31,8 +31,7 @@ public class TsCarrera
                 re[0]=v.getCodigoCarrera();
                 re[1]=v.getNombre();
                 re[2]=v.getCantidadMaterias();
-                re[3]=v.getCodigoFacultad();/*En el método getCodigoFacultad
-                                hay que buscar el nombre en base al código*/
+                re[3]=v.getCodigoFacultad();
                 tm.addRow(re);
             }
         }
@@ -47,7 +46,7 @@ public class TsCarrera
             , String codigoFacultad)
     {
         c = new Carrera(nombre,Integer.valueOf(cantidadMaterias),
-                Integer.valueOf(codigoFacultad));
+                codigoFacultad);
         try {
             if (obC.agregar(c)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "
@@ -64,8 +63,7 @@ public class TsCarrera
             String cantidadMaterias, String codigoFacultad)
     {
         c = new Carrera(Integer.valueOf(codigoCarrera),nombre,
-                Integer.valueOf(cantidadMaterias),
-                Integer.valueOf(codigoFacultad));
+                Integer.valueOf(cantidadMaterias),codigoFacultad);
         try {
             if (obC.modificar(c)>0) {
                 JOptionPane.showMessageDialog(null, "Registro modificado "

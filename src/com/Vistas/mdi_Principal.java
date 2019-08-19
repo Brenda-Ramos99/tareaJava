@@ -1,5 +1,7 @@
 package com.Vistas;
+import com.Dao.DaoCarrera;
 import com.Entidades.Validar;
+import com.LogicaNegocio.*;
 
 /**
  * nombre de la clase: mdi_Principal 
@@ -9,10 +11,33 @@ import com.Entidades.Validar;
  * @author Brenda Ramos
  */
 public class mdi_Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form mdi_Principal
-     */
+    
+    TsCarrera tCarrera = new TsCarrera();
+    TsEstudiante tEstudiante=new TsEstudiante();
+    TsFacultad tFacultad=new TsFacultad();
+    TsTipoUsuario tTipo=new TsTipoUsuario();
+    TsUsuario tUsuario=new TsUsuario();
+    
+    void llenarFacultad()
+    {
+        tableFacultad.setModel(tFacultad.datos());
+    }
+    
+    void llenarCarrera()
+    {
+        tableCarrera.setModel(tCarrera.datos());
+    }
+    
+    void llenarEstudiante()
+    {
+        tablaEstudiante.setModel(tEstudiante.datos());
+    }
+    
+    void llenarUsuario()
+    {
+        tableUser.setModel(tUsuario.datos());
+    }
+    
     Validar v= new Validar();
     public mdi_Principal() {
         initComponents();
@@ -324,7 +349,7 @@ public class mdi_Principal extends javax.swing.JFrame {
             internalEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -335,7 +360,7 @@ public class mdi_Principal extends javax.swing.JFrame {
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -499,7 +524,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel16.setText("Cantidad Materia");
 
-        jLabel17.setText("Nombre Facultad");
+        jLabel17.setText("Facultad");
 
         spinnerMaterias.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
@@ -508,6 +533,11 @@ public class mdi_Principal extends javax.swing.JFrame {
         btnModif.setText("Modificar");
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnLimp.setText("Limpiar");
         btnLimp.addActionListener(new java.awt.event.ActionListener() {
@@ -619,7 +649,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalCarrera);
@@ -755,11 +785,12 @@ public class mdi_Principal extends javax.swing.JFrame {
                             .addComponent(jLabel19)
                             .addComponent(txtCodUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel20)
-                            .addComponent(jLabel23)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnomUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel23)
+                                .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtnomUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(14, 14, 14)
                         .addGroup(internalUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(internalUserLayout.createSequentialGroup()
@@ -786,7 +817,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                             .addComponent(btnSalirUser))))
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalUser);
@@ -881,6 +912,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 //mostrar formulario estudiante
     private void newEstMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEstMenuItemActionPerformed
         internalEstudiante.setVisible(true);
+        llenarEstudiante();        
         facuMenu.setEnabled(false);
         carreMenu.setEnabled(false);
         usuMenu.setEnabled(false);
@@ -904,7 +936,8 @@ public class mdi_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 //mostrar formulario de facultad
     private void newFacuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFacuMenuItemActionPerformed
-        internalFacultad.setVisible(true); 
+        internalFacultad.setVisible(true);
+        llenarFacultad();
         carreMenu.setEnabled(false);
         usuMenu.setEnabled(false);
         repoMenu.setEnabled(false);
@@ -917,6 +950,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 //mostrar formulario de carreras 
     private void newCarrMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newCarrMenuItemActionPerformed
         internalCarrera.setVisible(true);
+        llenarCarrera();
         facuMenu.setEnabled(false);
         usuMenu.setEnabled(false);
         repoMenu.setEnabled(false);
@@ -926,6 +960,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 //salir del formulario carrera
     private void btnExitCarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitCarrActionPerformed
         internalCarrera.setVisible(false);
+        
         usuMenu.setEnabled(true);
         facuMenu.setEnabled(true);
         repoMenu.setEnabled(true);
@@ -943,6 +978,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 //mostrar formulario agregar ususario
     private void newUsuMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuMenuItemActionPerformed
         internalUser.setVisible(true);
+        llenarUsuario();
         facuMenu.setEnabled(false);
         carreMenu.setEnabled(false);
         repoMenu.setEnabled(false);
@@ -964,6 +1000,10 @@ public class mdi_Principal extends javax.swing.JFrame {
     private void btnLimUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimUserActionPerformed
         limpiar();
     }//GEN-LAST:event_btnLimUserActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
      * @param args the command line arguments
