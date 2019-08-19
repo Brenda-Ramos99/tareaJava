@@ -13,7 +13,7 @@ public class Conexion
     /*Variables definidas para parámetros de conexión*/
     private String driver="com.mysql.jdbc.Driver";
     private String url="jdbc:mysql://localhost:3306/"
-            + "AlfaroRecinosAyalaVillatoroRamos";
+            + "alfarorecinosayalavillatororamos";
     private String user="root";
     private String password="";
     

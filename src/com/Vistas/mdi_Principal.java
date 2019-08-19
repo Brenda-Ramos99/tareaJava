@@ -44,14 +44,14 @@ public class mdi_Principal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(mdi_Principal.MAXIMIZED_BOTH);
         ///validacion de cajas de texto de solo letras
-        v.validarLetras(txtApellido);
-        v.validarLetras(txtNomCarre);
-        v.validarLetras(txtinteres);
-        v.validarLetras(txtnombrefacu);
-        v.validarLetras(txtnombre);
-        v.validarLetras(txtnomUser);
+        v.validarNombres(txtApellido);
+        v.validarNombres(txtNomCarre);
+        v.validarNombres(txtinteres);
+        v.validarNombres(txtnombrefacu);
+        v.validarNombres(txtnombre);
+        v.validarUsuario(txtnomUser);
         //validaciode  cajas de texto de solo nuemros 
-        v.validarumeros(txtcum);
+        v.validarCUM(txtcum);
         v.validarumeros(txtCodUser);
         v.validarumeros(txtCodigo);
         v.validarumeros(txtcodigfacu);
@@ -126,12 +126,12 @@ public class mdi_Principal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         txtnombrefacu = new javax.swing.JTextField();
         txtcodigfacu = new javax.swing.JTextField();
-        txttelefacu = new javax.swing.JTextField();
         btnAgreFac = new javax.swing.JButton();
         btnModFacu = new javax.swing.JButton();
         btnEliFacu = new javax.swing.JButton();
         btnLimFac = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        txttelefacu = new javax.swing.JFormattedTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableFacultad = new javax.swing.JTable();
         internalCarrera = new javax.swing.JInternalFrame();
@@ -212,6 +212,17 @@ public class mdi_Principal extends javax.swing.JFrame {
         jLabel8.setText("Intereses:");
 
         txtcodigo.setEnabled(false);
+
+        txtnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombreActionPerformed(evt);
+            }
+        });
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
+            }
+        });
 
         buttonGroup1.add(rbmasculino);
         rbmasculino.setText("Masculino");
@@ -359,7 +370,7 @@ public class mdi_Principal extends javax.swing.JFrame {
             internalEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(internalEstudianteLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
@@ -389,6 +400,14 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel12.setText("Telefono");
 
+        txtnombrefacu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombrefacuActionPerformed(evt);
+            }
+        });
+
+        txtcodigfacu.setEnabled(false);
+
         btnAgreFac.setText("Agregar");
 
         btnModFacu.setText("Modificar");
@@ -409,6 +428,12 @@ public class mdi_Principal extends javax.swing.JFrame {
             }
         });
 
+        try {
+            txttelefacu.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -417,19 +442,19 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(txttelefacu))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtnombrefacu))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtnombrefacu, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtcodigfacu, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtcodigfacu, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(txttelefacu, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
@@ -446,7 +471,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(jLabel9)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,14 +497,15 @@ public class mdi_Principal extends javax.swing.JFrame {
                             .addComponent(btnLimFac))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(btnSalir)
+                        .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(txttelefacu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnSalir)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                            .addComponent(txttelefacu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         tableFacultad.setModel(new javax.swing.table.DefaultTableModel(
@@ -512,7 +538,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalFacultad);
@@ -540,7 +566,9 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Facultad");
 
-        spinnerMaterias.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        txtCodigo.setEnabled(false);
+
+        spinnerMaterias.setModel(new javax.swing.SpinnerNumberModel(1, 1, 60, 1));
 
         btnElim.setText("Eliminar");
 
@@ -667,7 +695,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         desktopPane.add(internalCarrera);
@@ -679,7 +707,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1030,6 +1058,18 @@ public class mdi_Principal extends javax.swing.JFrame {
                 cmbcarrera.getSelectedItem().toString());
     }//GEN-LAST:event_btnagregarEstuActionPerformed
 
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombreActionPerformed
+
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
+        
+    }//GEN-LAST:event_txtnombreKeyTyped
+
+    private void txtnombrefacuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombrefacuActionPerformed
+   // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombrefacuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1162,7 +1202,7 @@ public class mdi_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtnomUser;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtnombrefacu;
-    private javax.swing.JTextField txttelefacu;
+    private javax.swing.JFormattedTextField txttelefacu;
     private javax.swing.JMenu usuMenu;
     // End of variables declaration//GEN-END:variables
 

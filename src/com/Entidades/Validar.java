@@ -39,4 +39,45 @@ public class Validar
             }
     });
     }
+    
+    
+    public void validarCUM(JTextField campo)
+    {
+        campo.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyTyped(KeyEvent e){
+                Character c= e.getKeyChar();
+                if(!Character.isDigit(c) && c!='.')
+                {
+                    e.consume();
+                }
+            }
+    });
+    }
+    
+    public void validarNombres(JTextField campo)
+    {
+        campo.addKeyListener(new KeyAdapter(){
+            public void keyTyped(KeyEvent e){
+                Character c= e.getKeyChar();
+                if(!Character.isAlphabetic(c) && c!=' ')
+                {
+                    e.consume();
+                }
+            }
+    });
+    }
+    
+    public void validarUsuario(JTextField campo)
+    {
+        campo.addKeyListener(new KeyAdapter(){
+            public void keyTyped(KeyEvent e){
+                Character c= e.getKeyChar();
+                if(!Character.isDigit(c) && !Character.isAlphabetic(c) && c!='.')
+                {
+                    e.consume();
+                }
+            }
+    });
+    }
 }
