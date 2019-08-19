@@ -22,7 +22,8 @@ public class DaoCarrera extends Conexion implements CrudCarrera
     int res;
 
     @Override
-    public ArrayList<Carrera> mostrar() throws ClassNotFoundException, SQLException {
+    public ArrayList<Carrera> mostrar() throws ClassNotFoundException,
+            SQLException {
         ps=super.con().prepareStatement("select * from carrera");
         ArrayList<Carrera> ar = new ArrayList<Carrera>();
         try
@@ -33,8 +34,8 @@ public class DaoCarrera extends Conexion implements CrudCarrera
                 c= new Carrera(rs.getInt("codigoCarrera"),
                         rs.getString(2),
                         rs.getInt(3),
-                        rs.getString(4)
-                );
+                        rs.getString(4));
+                ar.add(c);
             }
         }
         catch (Exception e)
