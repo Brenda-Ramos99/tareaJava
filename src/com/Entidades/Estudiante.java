@@ -16,7 +16,7 @@ public class Estudiante
     private String genero;
     private double cum;
     private String intereses;
-    private int codigoCarrera;
+    private String codigoCarrera;
     
 
     public Estudiante()
@@ -25,7 +25,7 @@ public class Estudiante
     }
 
     public Estudiante(int codigoEstudiante, String nombre, int edad,
-            String genero, double cum, String intereses, int codigoCarrera) {
+            String genero, double cum, String intereses, String codigoCarrera) {
         this.codigoEstudiante = codigoEstudiante;
         this.nombre = nombre;
         this.edad = edad;
@@ -36,7 +36,7 @@ public class Estudiante
     }
 
     public Estudiante(String nombre, int edad, String genero,
-            double cum, String intereses, int codigoCarrera) {
+            double cum, String intereses, String codigoCarrera) {
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
@@ -97,13 +97,12 @@ public class Estudiante
         this.intereses = intereses;
     }
 
-    public int getCodigoCarrera() {
+    public String getCodigoCarrera() {
         return codigoCarrera;
     }
 
-    public void setCodigoCarrera(int codigoCarrera) {
+    public void setCodigoCarrera(String codigoCarrera) {
         this.codigoCarrera = codigoCarrera;
     }
-
-      
+    
 }

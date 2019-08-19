@@ -50,7 +50,7 @@ public class TsUsuario
             String apellido, String edad,String codigoTipo)
     {
         usu = new Usuario(usuario, contra, nombre, apellido,
-                Integer.valueOf(edad), Integer.valueOf(codigoTipo));
+                Integer.valueOf(edad), codigoTipo);
         try {
             if (obU.agregar(usu)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "
@@ -68,7 +68,7 @@ public class TsUsuario
     {
         usu = new Usuario(Integer.valueOf(codigoUsuario), usuario, contra,
                 nombre, apellido,Integer.valueOf(edad),
-                Integer.valueOf(codigoTipo));
+                codigoTipo);
         try {
             if (obU.modificar(usu)>0) {
                 JOptionPane.showMessageDialog(null, "Registro modificado "

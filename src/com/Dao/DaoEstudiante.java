@@ -25,7 +25,10 @@ public class DaoEstudiante extends Conexion implements CrudEstudiante
     @Override
     public ArrayList<Estudiante> mostrar() throws ClassNotFoundException,
             SQLException {
-        ps=super.con().prepareStatement("select * from estudiante");
+        ps=super.con().prepareStatement("select codigoEstudiante,nombre,edad,"
+                + "genero,cum,intereses,(select nombre from carrera where"
+                + " codigoCarrera=estudiante.codigoCarrera)as carrera "
+                + "from estudiante;");
         ArrayList<Estudiante> ar= new ArrayList<Estudiante>();
         try
         {
@@ -38,7 +41,7 @@ public class DaoEstudiante extends Conexion implements CrudEstudiante
                 rs.getString(4),
                 rs.getDouble(5),
                 rs.getString(6),
-                rs.getInt(7));
+                rs.getString(7));
                 ar.add(es);
             }
         }
@@ -64,7 +67,7 @@ public class DaoEstudiante extends Conexion implements CrudEstudiante
         ps.setString(3, es.getGenero());
         ps.setDouble(4, es.getCum());
         ps.setString(5, es.getIntereses());
-        ps.setInt(6, es.getCodigoCarrera());
+        ps.setString(6, es.getCodigoCarrera());
         try
         {
             res=ps.executeUpdate();
@@ -91,7 +94,7 @@ public class DaoEstudiante extends Conexion implements CrudEstudiante
         ps.setInt(2, es.getEdad());
         ps.setString(3, es.getGenero());
         ps.setString(4, es.getIntereses());
-        ps.setInt(5, es.getCodigoCarrera());
+        ps.setString(5, es.getCodigoCarrera());
         ps.setInt(6, es.getCodigoEstudiante());
         try
         {

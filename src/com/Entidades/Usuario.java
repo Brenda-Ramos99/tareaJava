@@ -15,14 +15,15 @@ public class Usuario
     private String nombre;
     private String apellido;
     private int edad;
-    private int codigoTipo;
+    private String codigoTipo;
 
     public Usuario()
     {
         
     }
 
-    public Usuario(int codigoUsuario, String usuario, String contra, String nombre, String apellido, int edad, int codigoTipo) {
+    public Usuario(int codigoUsuario, String usuario, String contra,
+            String nombre, String apellido, int edad, String codigoTipo) {
         this.codigoUsuario = codigoUsuario;
         this.usuario = usuario;
         this.contra = contra;
@@ -32,7 +33,8 @@ public class Usuario
         this.codigoTipo = codigoTipo;
     }
 
-    public Usuario(String usuario, String contra, String nombre, String apellido, int edad, int codigoTipo) {
+    public Usuario(String usuario, String contra, String nombre,
+            String apellido, int edad, String codigoTipo) {
         this.usuario = usuario;
         this.contra = contra;
         this.nombre = nombre;
@@ -93,11 +95,13 @@ public class Usuario
         this.edad = edad;
     }
 
-    public int getCodigoTipo() {
+    public String getCodigoTipo() {
         return codigoTipo;
     }
 
-    public void setCodigoTipo(int codigoTipo) {
+    public void setCodigoTipo(String codigoTipo) {
         this.codigoTipo = codigoTipo;
     }
+
+    
 }

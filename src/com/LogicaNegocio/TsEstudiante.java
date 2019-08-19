@@ -50,7 +50,7 @@ public class TsEstudiante
             String intereses,String codigoCarrera)
     {
         es = new Estudiante(nombre,Integer.valueOf(edad),genero,
-                Integer.valueOf(cum),intereses,Integer.valueOf(codigoCarrera));
+                Integer.valueOf(cum),intereses,codigoCarrera);
         try {
             if (obE.agregar(es)>0) {
                 JOptionPane.showMessageDialog(null, "Registro insertado "
@@ -69,7 +69,7 @@ public class TsEstudiante
     {
         es = new Estudiante(Integer.valueOf(codigoEstudiante),nombre,
                 Integer.valueOf(edad),genero,Integer.valueOf(cum),intereses,
-                Integer.valueOf(codigoCarrera));
+                codigoCarrera);
         try {
             if (obE.modificar(es)>0) {
                 JOptionPane.showMessageDialog(null, "Registro modificado "

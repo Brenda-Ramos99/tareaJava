@@ -23,8 +23,11 @@ public class DaoUsuario extends Conexion implements CrudUsuario
     int res;
 
     @Override
-    public ArrayList<Usuario> mostrar() throws ClassNotFoundException, SQLException {
-        ps=super.con().prepareStatement("select * from usuario");
+    public ArrayList<Usuario> mostrar() throws ClassNotFoundException, 
+            SQLException {
+        ps=super.con().prepareStatement("select codigoUsuario,usuario,contra,"
+                + "nombre,apellido,edad,(select nombre from tipousuario where "
+                + "codigoTipo=usuario.codigoTipo)as codigoTipo from usuario;");
         ArrayList<Usuario> ar= new ArrayList<Usuario>();
         try
         {
@@ -37,7 +40,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
                         rs.getString(4),
                         rs.getString(5),
                         rs.getInt(6),
-                        rs.getInt(7));
+                        rs.getString(7));
                 ar.add(usu);
             }
         }
@@ -62,7 +65,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
         ps.setString(3, usu.getNombre());
         ps.setString(4, usu.getApellido());
         ps.setInt(5, usu.getEdad());
-        ps.setInt(6, usu.getCodigoTipo());
+        ps.setString(6, usu.getCodigoTipo());
         try
         {
             res=ps.executeUpdate();
@@ -90,7 +93,7 @@ public class DaoUsuario extends Conexion implements CrudUsuario
         ps.setString(3, usu.getNombre());
         ps.setString(4, usu.getApellido());
         ps.setInt(5, usu.getEdad());
-        ps.setInt(6, usu.getCodigoTipo());
+        ps.setString(6, usu.getCodigoTipo());
         ps.setInt(7, usu.getCodigoUsuario());
         try
         {

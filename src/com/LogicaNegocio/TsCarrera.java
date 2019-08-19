@@ -42,6 +42,7 @@ public class TsCarrera
         return tm;
     }
     
+    
     public void agregar(String nombre,String cantidadMaterias
             , String codigoFacultad)
     {

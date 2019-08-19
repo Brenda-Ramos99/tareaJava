@@ -18,4 +18,6 @@ public interface CrudCarrera
     public int agregar(Carrera c)throws ClassNotFoundException,SQLException;
     public int modificar(Carrera c)throws ClassNotFoundException,SQLException;
     public int eliminar(Carrera c)throws ClassNotFoundException,SQLException;
+    public ArrayList<Carrera> llenar() throws ClassNotFoundException,
+            SQLException;
 }

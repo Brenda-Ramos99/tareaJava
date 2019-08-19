@@ -24,17 +24,20 @@ public class DaoCarrera extends Conexion implements CrudCarrera
     @Override
     public ArrayList<Carrera> mostrar() throws ClassNotFoundException,
             SQLException {
-        ps=super.con().prepareStatement("select * from carrera");
+        ps=super.con().prepareStatement("select codigoCarrera, nombre,"
+                + " cantidadMaterias,(select nombre from facultad where "
+                + "codigoFacultad=carrera.codigoFacultad) as facultad from carrera;");
+        
         ArrayList<Carrera> ar = new ArrayList<Carrera>();
         try
         {
-            rs=ps.executeQuery();
+            rs=ps.executeQuery();            
             while (rs.next())
             {                
                 c= new Carrera(rs.getInt("codigoCarrera"),
                         rs.getString(2),
                         rs.getInt(3),
-                        rs.getString(4));
+                        rs.getString(4));                
                 ar.add(c);
             }
         }
@@ -48,6 +51,32 @@ public class DaoCarrera extends Conexion implements CrudCarrera
             super.con().close();
         }
         return ar;
+    }
+    
+    @Override
+    public ArrayList<Carrera> llenar() throws ClassNotFoundException,
+            SQLException {
+        ps=super.con().prepareStatement("select nombre from carrera");
+        ArrayList<Carrera> a1 = new ArrayList<Carrera>();
+        try
+        {
+            rs=ps.executeQuery();
+            while (rs.next())
+            {                
+                c = new Carrera(rs.getInt("codigoCarrera"));
+                a1.add(c);
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        finally
+        {
+            ps.close();
+            super.con().close();
+        }
+        return a1;
     }
 
     @Override
@@ -119,5 +148,5 @@ public class DaoCarrera extends Conexion implements CrudCarrera
             super.con().close();
         }
         return res;
-    }    
+    }
 }
