@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `alfarorecinosayalavillatororamos`.`usuario` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-alter table usuario alter column codigoUsuario SET INT(11) NOT NULL AUTO_INCREMENT;
+alter table usuario modify codigoUsuario INT(11) NOT NULL AUTO_INCREMENT;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
