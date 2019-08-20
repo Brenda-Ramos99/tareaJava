@@ -1,5 +1,6 @@
 package com.Vistas;
 import com.Dao.DaoCarrera;
+//import com.Entidades.CargarComboBox;
 import com.Entidades.Validar;
 import com.LogicaNegocio.*;
 
@@ -57,6 +58,8 @@ public class mdi_Principal extends javax.swing.JFrame {
         v.validarumeros(txtcodigfacu);
         v.validarumeros(txttelefacu);
         v.validarumeros(txtcodigo);
+        //CargarComboBox cmb = new CargarComboBox();
+        //cmb.consultar_facultad(cmbFacultad);
     }
     void limpiar()
     {

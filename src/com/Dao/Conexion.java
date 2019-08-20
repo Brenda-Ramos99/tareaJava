@@ -1,6 +1,6 @@
 package com.Dao;
 import java.sql.*;
-
+import javax.sql.DataSource;
 /**
  * Nombre de la Clase: Conexion
  * Versión: 1.0
@@ -16,13 +16,12 @@ public class Conexion
             + "alfarorecinosayalavillatororamos";
     private String user="root";
     private String password="";
-    
+    //public DataSource dataSource;
     /*Método constructor vacío de la clase Conexión*/
     public Conexion()
     {
         
     }
-    
     /*Método constructor de conexión con excepciones e inicializando
     los parámetro de conexión*/
     public Connection con() throws ClassNotFoundException, SQLException
