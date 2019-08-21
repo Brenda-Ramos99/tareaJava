@@ -10,6 +10,9 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="usuMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/empleado.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="102"/>
             <Property name="text" type="java.lang.String" value="Usuarios"/>
           </Properties>
@@ -27,6 +30,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="facuMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/colegio.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="104"/>
             <Property name="text" type="java.lang.String" value="Facultad"/>
           </Properties>
@@ -44,6 +50,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="carreMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/beca.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Carrera"/>
           </Properties>
           <SubComponents>
@@ -59,6 +68,9 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="estuMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/estudiante.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="101"/>
             <Property name="text" type="java.lang.String" value="Estudiantes"/>
           </Properties>
@@ -76,11 +88,17 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="repoMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/crecimiento.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="salirMenu">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/img/salida.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <SubComponents>
@@ -144,7 +162,7 @@
       <SubComponents>
         <Container class="javax.swing.JInternalFrame" name="internalEstudiante">
           <Properties>
-            <Property name="visible" type="boolean" value="true"/>
+            <Property name="visible" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -173,7 +191,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="148" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="168" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -387,6 +405,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnagregarEstu">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/agregar-boton-dentro-del-circulo-negro.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
                   <Events>
@@ -395,16 +416,25 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnmodific">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/lapiz-escribiendo-en-un-papel.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btneliminar">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/cesto-de-basura.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnlimpiar">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/actualizar-flecha-izquierda.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Limpiar"/>
                   </Properties>
                   <Events>
@@ -421,6 +451,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnExit">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/img/logout.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Salir"/>
                   </Properties>
                   <Events>

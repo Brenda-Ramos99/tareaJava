@@ -194,7 +194,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         desktopPane.setName(""); // NOI18N
 
-        internalEstudiante.setVisible(true);
+        internalEstudiante.setVisible(false);
 
         jLabel1.setText("Datos Estudiante");
 
@@ -230,6 +230,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         spinerEdad.setModel(new javax.swing.SpinnerNumberModel(15, 15, 100, 1));
 
+        btnagregarEstu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btnagregarEstu.setText("Agregar");
         btnagregarEstu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,10 +238,13 @@ public class mdi_Principal extends javax.swing.JFrame {
             }
         });
 
+        btnmodific.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnmodific.setText("Modificar");
 
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cesto-de-basura.png"))); // NOI18N
         btneliminar.setText("Eliminar");
 
+        btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/actualizar-flecha-izquierda.png"))); // NOI18N
         btnlimpiar.setText("Limpiar");
         btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +255,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         buttonGroup1.add(rbfemenino);
         rbfemenino.setText("Femenino");
 
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout.png"))); // NOI18N
         btnExit.setText("Salir");
         btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -384,7 +389,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -500,7 +505,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btnSalir)
-                        .addContainerGap(25, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -526,7 +531,7 @@ public class mdi_Principal extends javax.swing.JFrame {
             .addGroup(internalFacultadLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(internalFacultadLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2)
@@ -870,6 +875,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         desktopPane.add(internalUser);
         internalUser.setBounds(50, 20, 610, 480);
 
+        usuMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/empleado.png"))); // NOI18N
         usuMenu.setMnemonic('f');
         usuMenu.setText("Usuarios");
 
@@ -884,6 +890,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         menuBar.add(usuMenu);
 
+        facuMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/colegio.png"))); // NOI18N
         facuMenu.setMnemonic('h');
         facuMenu.setText("Facultad");
 
@@ -898,6 +905,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         menuBar.add(facuMenu);
 
+        carreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/beca.png"))); // NOI18N
         carreMenu.setText("Carrera");
 
         newCarrMenuItem.setText("Agregar Carrera");
@@ -910,6 +918,7 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         menuBar.add(carreMenu);
 
+        estuMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/estudiante.png"))); // NOI18N
         estuMenu.setMnemonic('e');
         estuMenu.setText("Estudiantes");
 
@@ -924,9 +933,11 @@ public class mdi_Principal extends javax.swing.JFrame {
 
         menuBar.add(estuMenu);
 
+        repoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/crecimiento.png"))); // NOI18N
         repoMenu.setText("Reportes");
         menuBar.add(repoMenu);
 
+        salirMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salida.png"))); // NOI18N
         salirMenu.setText("Salir");
 
         exitMenuItem.setText("Salir");

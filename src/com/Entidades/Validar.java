@@ -2,6 +2,7 @@ package com.Entidades;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JTextField;
+import com.Vistas.*;
 
 /**
  * Nombre de la Clase: Validar
