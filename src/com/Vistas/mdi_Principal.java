@@ -713,7 +713,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         desktopPane.add(internalCarrera);
         internalCarrera.setBounds(40, 20, 630, 460);
 
-        internalUser.setVisible(true);
+        internalUser.setVisible(false);
 
         btAgreuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btAgreuser.setText("Agregar");
@@ -903,7 +903,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalUser);
-        internalUser.setBounds(50, 20, 710, 480);
+        internalUser.setBounds(50, 20, 660, 480);
 
         usuMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/empleado.png"))); // NOI18N
         usuMenu.setMnemonic('f');
