@@ -357,6 +357,11 @@ public class mdi_Principal extends javax.swing.JFrame {
 
             }
         ));
+        tablaEstudiante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaEstudianteMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaEstudiante);
 
         javax.swing.GroupLayout internalEstudianteLayout = new javax.swing.GroupLayout(internalEstudiante.getContentPane());
@@ -383,7 +388,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalEstudiante);
-        internalEstudiante.setBounds(10, 10, 700, 500);
+        internalEstudiante.setBounds(10, 10, 760, 500);
 
         internalFacultad.setVisible(false);
 
@@ -508,6 +513,11 @@ public class mdi_Principal extends javax.swing.JFrame {
 
             }
         ));
+        tableFacultad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableFacultadMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tableFacultad);
 
         javax.swing.GroupLayout internalFacultadLayout = new javax.swing.GroupLayout(internalFacultad.getContentPane());
@@ -534,7 +544,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalFacultad);
-        internalFacultad.setBounds(10, 10, 600, 430);
+        internalFacultad.setBounds(10, 10, 700, 430);
 
         internalCarrera.setVisible(false);
 
@@ -546,6 +556,11 @@ public class mdi_Principal extends javax.swing.JFrame {
 
             }
         ));
+        tableCarrera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableCarreraMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tableCarrera);
 
         jLabel13.setText("REGISTRO DE CARRERA");
@@ -627,7 +642,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                                 .addComponent(btnAgregar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnModif)))
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(24, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnExitCarr)
@@ -698,15 +713,25 @@ public class mdi_Principal extends javax.swing.JFrame {
         desktopPane.add(internalCarrera);
         internalCarrera.setBounds(40, 20, 630, 460);
 
-        internalUser.setVisible(false);
+        internalUser.setVisible(true);
 
         btAgreuser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregar-boton-dentro-del-circulo-negro.png"))); // NOI18N
         btAgreuser.setText("Agregar");
+        btAgreuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAgreuserActionPerformed(evt);
+            }
+        });
 
         jLabel24.setText("Tipo de Usuario");
 
         btnModUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lapiz-escribiendo-en-un-papel.png"))); // NOI18N
         btnModUser.setText("Modificar");
+        btnModUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModUserActionPerformed(evt);
+            }
+        });
 
         jLabel25.setText("Usuario");
 
@@ -774,7 +799,7 @@ public class mdi_Principal extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtApellido)
                             .addComponent(passwordUser)
-                            .addComponent(cmbTipoUSer, 0, 147, Short.MAX_VALUE))
+                            .addComponent(cmbTipoUSer, 0, 169, Short.MAX_VALUE))
                         .addGap(77, 77, 77))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -846,6 +871,11 @@ public class mdi_Principal extends javax.swing.JFrame {
 
             }
         ));
+        tableUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableUserMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tableUser);
 
         javax.swing.GroupLayout internalUserLayout = new javax.swing.GroupLayout(internalUser.getContentPane());
@@ -873,7 +903,7 @@ public class mdi_Principal extends javax.swing.JFrame {
         );
 
         desktopPane.add(internalUser);
-        internalUser.setBounds(50, 20, 610, 480);
+        internalUser.setBounds(50, 20, 710, 480);
 
         usuMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/empleado.png"))); // NOI18N
         usuMenu.setMnemonic('f');
@@ -1069,6 +1099,74 @@ public class mdi_Principal extends javax.swing.JFrame {
                 txtcum.getText(), txtinteres.getText(),
                 cmbcarrera.getSelectedItem().toString());
     }//GEN-LAST:event_btnagregarEstuActionPerformed
+
+    private void btAgreuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgreuserActionPerformed
+        tUsuario.agregar(txtUser.getText(), passwordUser.getText(),
+                txtnomUser.getText(), txtApellido.getText(),
+                spinnerEdadUser.getValue().toString(), 
+                cmbTipoUSer.getSelectedItem().toString());
+    }//GEN-LAST:event_btAgreuserActionPerformed
+
+    private void tableCarreraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCarreraMouseClicked
+        
+        int f= this.tableCarrera.getSelectedRow();
+        txtCodigo.setText(tableCarrera.getValueAt(f, 0).toString());
+        txtNomCarre.setText(tableCarrera.getValueAt(f, 1).toString());
+        spinnerMaterias.setValue(tableCarrera.getValueAt(f, 2));
+        cmbFacultad.setSelectedItem(tableCarrera.getValueAt(f, 3).toString());
+    }//GEN-LAST:event_tableCarreraMouseClicked
+
+    private void tableUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableUserMouseClicked
+        
+        int f= this.tableUser.getSelectedRow();
+        txtCodUser.setText(tableUser.getValueAt(f, 0).toString());
+        txtUser.setText(tableUser.getValueAt(f, 1).toString());
+        passwordUser.setText(tableUser.getValueAt(f, 2).toString());
+        txtnomUser.setText(tableUser.getValueAt(f, 3).toString());
+        txtApellido.setText(tableUser.getValueAt(f, 4).toString());
+        spinnerEdadUser.setValue(tableUser.getValueAt(f, 5));
+        cmbTipoUSer.setSelectedItem(tableUser.getValueAt(f, 6).toString());
+    }//GEN-LAST:event_tableUserMouseClicked
+
+    private void tableFacultadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableFacultadMouseClicked
+        int f= this.tableFacultad.getSelectedRow();
+        txtcodigfacu.setText(tableFacultad.getValueAt(f, 0).toString());
+        txtnombrefacu.setText(tableFacultad.getValueAt(f, 1).toString());
+        txttelefacu.setText(tableFacultad.getValueAt(f, 2).toString());
+    }//GEN-LAST:event_tableFacultadMouseClicked
+
+    private void tablaEstudianteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEstudianteMouseClicked
+        int f= this.tablaEstudiante.getSelectedRow();
+        
+        
+        txtcodigo.setText(tablaEstudiante.getValueAt(f, 0).toString());
+        txtnombre.setText(tablaEstudiante.getValueAt(f, 1).toString());
+        spinerEdad.setValue(tablaEstudiante.getValueAt(f, 2));
+        String genero = tablaEstudiante.getValueAt(f,3).toString();
+        if (genero.equals("Femenino"))
+        {
+            rbfemenino.setSelected(true);
+        }
+        else if(genero.equals("Masculino"))
+        {
+            rbmasculino.setSelected(true);
+        }
+        else
+        {
+            rbfemenino.setSelected(false);
+            rbmasculino.setSelected(false);
+        }
+        txtcum.setText(tablaEstudiante.getValueAt(f, 4).toString());
+        txtinteres.setText(tablaEstudiante.getValueAt(f, 5).toString());
+        cmbcarrera.setSelectedItem(tablaEstudiante.getValueAt(f, 6).toString());
+    }//GEN-LAST:event_tablaEstudianteMouseClicked
+
+    private void btnModUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModUserActionPerformed
+        tUsuario.modificar(txtCodUser.getText(), txtUser.getText(), passwordUser.getText(),
+                txtnomUser.getText(), txtApellido.getText(),
+                spinnerEdadUser.getValue().toString(), 
+                cmbTipoUSer.getSelectedItem().toString());
+    }//GEN-LAST:event_btnModUserActionPerformed
 
     /**
      * @param args the command line arguments
